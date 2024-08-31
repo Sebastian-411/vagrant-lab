@@ -64,6 +64,8 @@ end
   
   Se accede a la máquina virtual y se obtiene la dirección IP asignada por DHCP. Esto nos permite confirmar la conectividad y acceder a los servicios desplegados en la máquina virtual.
 
+  ![alt text](resources/image.png)
+  ![alt text](resources/image1.png)
 ## 5. 🌐 Verificación del Despliegue del Servidor
 
 - **Acción:** Acceder a la IP pública proporcionada para confirmar que el servidor Apache se ha desplegado correctamente.
