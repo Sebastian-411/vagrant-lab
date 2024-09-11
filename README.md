@@ -17,29 +17,6 @@ El objetivo de esta práctica es desplegar un servidor web en un entorno virtual
 
 Aquí está el contenido del archivo `Vagrantfile`, que define la configuración de la máquina virtual:
 
-```ruby
-Vagrant.configure("2") do |config|
-  # Usar una box de Ubuntu 18.04
-  config.vm.box = "ubuntu/bionic64"
-
-  # Configurar la red para acceder al servidor web
-  config.vm.network "private_network", type: "dhcp"
-
-  # Provisión para instalar Apache
-  config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y apache2
-  SHELL
-
-  # Configurar la carpeta sincronizada
-  config.vm.synced_folder ".", "/var/www/html"
-
-  # Configurar la máquina virtual
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1024"
-  end
-end
-```
 
 - **🔍 Descripción del `Vagrantfile`**:
   - Se utiliza la imagen base de Ubuntu 18.04 (`ubuntu/bionic64`).
@@ -73,4 +50,4 @@ end
   Una vez obtenida la IP, abre un navegador web y escribe la dirección IP. Si todo ha salido bien, deberías ver la página de inicio predeterminada de Apache, ¡indicando que el servidor está en funcionamiento! 🎉
 
 ## ✅ Conclusión
-En esta práctica, logramos configurar y desplegar un servidor web Apache en un entorno virtualizado usando Vagrant con Ubuntu 18.04. A través de la configuración del archivo `Vagrantfile` y el uso de comandos básicos de Vagrant, pudimos iniciar y acceder a la máquina virtual. Además, verificamos el correcto despliegue del servidor web accediendo a la IP pública asignada. También se generaron archivos importantes como `.vagrant` y `ubuntu-bionic-18.04-cloudimg-console.log`, que son fundamentales para la gestión y depuración de la máquina virtual. Este ejercicio demostró cómo utilizar Vagrant para crear entornos de desarrollo de manera rápida y eficiente. 🌐💻
+En esta práctica, logramos configurar y desplegar un servidor web Apache en un entorno virtualizado usando Vagrant con Ubuntu 18.04. A través de la configuración del archivo `Vagrantfile` y el uso de comandos básicos de Vagrant, pudimos iniciar y acceder a la máquina virtual. Además, verificamos el correcto despliegue del servidor web accediendo a la IP pública asignada. También se generaron archivos importantes como `.vagrant` y `ubuntu-bionic-18.04-cloudimg-console.log`, que son fundamentales para la gestión y depuración de la máquina virtual. Este ejercicio demostró cómo utilizar Vagrant para crear entornos de desarrollo de manera rápida y eficiente. 🌐💻# vagrant-microservices
